@@ -1,2 +1,0 @@
-# yumismol
-wala
