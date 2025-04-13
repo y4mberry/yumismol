@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Valentine's Day 💘</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px #ff3e55;
+    }
+
+    .message {
+      display: none;
+      background-color: rgba(255, 62, 85, 0.8);
+      padding: 20px;
+      border-radius: 20px;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #ff6b81;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #ff4757;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 30px;
+      animation: float 6s infinite linear;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    iframe {
+      margin-top: 30px;
+      border: none;
+      width: 300px;
+      height: 380px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>CONGRATS YUMI I'M SO PROUD OF YOU, 愛してます ! 💖</h1>
+  <button onclick="toggleMessage()">Click for a Surprise 💌</button>
+
+  <div class="message" id="messageBox">
+    <p>WALA AKO MAILAGAY SA MESSAGE<br>
+     DESERVE MO NG KISS BUT HINDI AKO MALAPIT SAYO<br>
+     ETO NALANG MUNA SIGURO HAHAHAHA<br>
+     GALINGAN MO ULIT SA COLLEGE, PADAYON! 💘</p>
+    <button onclick="toggleMessage()">Close</button>
+  </div>
+
+  <!-- Spotify Playlist -->
+  <iframe 
+    src="https://open.spotify.com/embed/playlist/2xtGSzDmNf3yiiZRr686cy?utm_source=generator" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy">
+  </iframe>
+
+  <!-- Floating hearts -->
+  <script>
+    function toggleMessage() {
+      const box = document.getElementById("messageBox");
+      box.style.display = box.style.display === "block" ? "none" : "block";
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 20 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
